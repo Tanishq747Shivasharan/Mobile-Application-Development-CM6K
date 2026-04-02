@@ -37,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = etname.getText().toString();
-                tvgreet.setText("Hello " + name + "!");
+                if (name == null || name.isEmpty()) {
+                    tvgreet.setText("Please enter your name for greetings!");
+                }
+                else {
+                    tvgreet.setText("Hello " + name + "!");
+                }
             }
         });
     }
