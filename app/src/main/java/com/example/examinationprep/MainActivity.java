@@ -15,8 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
-    EditText etname;
-    TextView tvgreet;
+    EditText etname, etpwd;
+    TextView tvinfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +29,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btn = findViewById(R.id.greet);
-        etname = findViewById(R.id.name);
-        tvgreet = findViewById(R.id.greetings);
+        btn = findViewById(R.id.loginbtn);
+        etname = findViewById(R.id.etname);
+        etpwd = findViewById(R.id.pwd);
+        tvinfo = findViewById(R.id.info);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = etname.getText().toString();
-                if (name == null || name.isEmpty()) {
-                    tvgreet.setText("Please enter your name for greetings!");
-                }
-                else {
-                    tvgreet.setText("Hello " + name + "!");
-                }
+
+                tvinfo.setText("Hello " + name + "!");
             }
         });
     }
