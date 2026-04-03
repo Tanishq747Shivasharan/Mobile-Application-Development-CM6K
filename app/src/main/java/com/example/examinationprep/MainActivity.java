@@ -1,5 +1,7 @@
 package com.example.examinationprep;
 
+import static android.text.TextUtils.isEmpty;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +20,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn, clrBtn;
-    RadioGroup rgGen;
-    CheckBox cb1, cb2, cb3, cb4;
-    TextView tvRes;
+    Button btn;
+    EditText etName, etEmail, etPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,46 +34,29 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        btn = findViewById(R.id.btnSubmit);
-        clrBtn = findViewById(R.id.clr);
-        rgGen = findViewById(R.id.rgGender);
-        cb1 = findViewById(R.id.cbTWD);
-        cb2 = findViewById(R.id.cbTBB);
-        cb3 = findViewById(R.id.cbFri);
-        cb4 = findViewById(R.id.cbST);
-        tvRes = findViewById(R.id.tvResult);
+        btn = findViewById(R.id.btnRegister);
+        etName = findViewById(R.id.etName);
+        etEmail = findViewById(R.id.etEmail);
+        etPhone = findViewById(R.id.etPhone);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String selected = "You are not the only one who Loved! The series\n ";
-                if(cb1.isChecked()) selected += "The Walking Dead\n ";
-                if(cb2.isChecked()) selected += "The Braking Bad\n ";
-                if(cb3.isChecked()) selected += "Friends\n ";
-                if(cb4.isChecked()) selected += "Stranger Things\n ";
+                String name = etName.getText().toString();
+                String email = etEmail.getText().toString();
 
-                int SelectedID = rgGen.getCheckedRadioButtonId();
-                RadioButton rb = findViewById(SelectedID);
-
-                if(rb != null) {
-                    selected += "\nMany " + rb.getText() + "s have got similar results!";
+                if (name.isEmpty() || email.isEmpty()) {
+                    if (name.isEmpty()) {
+                        etName.setError("Name is required");
+                    }
+                    if (email.isEmpty()) {
+                        etEmail.setError("Email is required");
+                    }
+                    Toast.makeText(MainActivity.this, "Fill all fields!", Toast.LENGTH_SHORT).show();
                 }
-
-                tvRes.setText(selected);
-            }
-        });
-
-        clrBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cb1.setChecked(false);
-                cb2.setChecked(false);
-                cb3.setChecked(false);
-                cb4.setChecked(false);
-
-                rgGen.clearCheck();
-
-                tvRes.setText("Result will appear here");
+                else {
+                    Toast.makeText(MainActivity.this, "Registration successfull for " + name, Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

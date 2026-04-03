@@ -6,95 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="30dp"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select the series you have liked so far in the year of 2024"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:padding="10dp" />
-    <CheckBox
-        android:id="@+id/cbTWD"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="The Walking Dead"
-        android:layout_marginLeft="10dp"
-        android:textSize="16sp" />
-    <CheckBox
-        android:id="@+id/cbTBB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="The Breaking Bad"
-        android:layout_marginLeft="10dp"
-        android:textSize="16sp" />
-    <CheckBox
-        android:id="@+id/cbFri"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Friends"
-        android:layout_marginLeft="10dp"
-        android:textSize="16sp" />
-    <CheckBox
-        android:id="@+id/cbST"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Stranger Things"
-        android:layout_marginLeft="10dp"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select your Gender"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:padding="10dp" />
-    <RadioGroup
-        android:id="@+id/rgGender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/rbMale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            android:textSize="16sp"
-            android:layout_marginLeft="10dp" />
-        <RadioButton
-            android:id="@+id/rbFemale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            android:textSize="16sp"
-            android:layout_marginLeft="10dp" />
-    </RadioGroup>
-
-    <Button
-        android:text="Submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSubmit"
         android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"/>
+        android:textStyle="bold"
+        android:text="User Registration"
+        android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/tvResult"
+    <EditText
+        android:id="@+id/etName"
+        android:hint="Full Name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Result will appear here"
-        android:layout_marginTop="40dp"
-        android:padding="10dp"/>
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/clr"
+        android:id="@+id/btnRegister"
+        android:text="Register"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Clear Form Data"
-        android:layout_marginTop="15dp" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
