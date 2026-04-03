@@ -3,7 +3,9 @@ package com.example.examinationprep;
 import static android.text.TextUtils.isEmpty;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = etName.getText().toString();
+                String name = etName.getText().toString().trim();
                 String email = etEmail.getText().toString();
 
                 if (name.isEmpty() || email.isEmpty()) {
@@ -55,8 +57,26 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Fill all fields!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(MainActivity.this, "Registration successfull for " + name, Toast.LENGTH_LONG).show();
+                    // Custom Toast Pattern
+                    showMyCustomToast("Registration Successful!");
                 }
+            }
+
+            // Helper method to keep code clean
+            public void showMyCustomToast(String msg) {
+                // Convert XML to View
+                LayoutInflater li = getLayoutInflater();
+                View layout = li.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_container));
+
+                // Find the TextView inside that layout and set message
+                TextView text = layout.findViewById(R.id.toast_text);
+                text.setText(msg);
+
+                // Create and show Toast
+                Toast t = new Toast(getApplicationContext());
+                t.setDuration(Toast.LENGTH_SHORT);
+                t.setView(layout); // Putting my custom layout inside the toast.
+                t.show();
             }
         });
     }
