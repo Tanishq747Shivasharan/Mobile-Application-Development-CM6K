@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn;
+    Button btn, clrBtn;
     RadioGroup rgGen;
     CheckBox cb1, cb2, cb3, cb4;
     TextView tvRes;
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btn = findViewById(R.id.btnSubmit);
+        clrBtn = findViewById(R.id.clr);
         rgGen = findViewById(R.id.rgGender);
         cb1 = findViewById(R.id.cbTWD);
         cb2 = findViewById(R.id.cbTBB);
@@ -61,5 +62,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        clrBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cb1.setChecked(false);
+                cb2.setChecked(false);
+                cb3.setChecked(false);
+                cb4.setChecked(false);
+
+                rgGen.clearCheck();
+
+                tvRes.setText("Result will appear here");
+            }
+        });
     }
 }
