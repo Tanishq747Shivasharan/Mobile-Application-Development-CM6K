@@ -6,28 +6,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:layout_marginTop="30dp"
     tools:context=".MainActivity">
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your name"
-        android:id="@+id/name"
-        android:layout_marginTop="15dp"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Greet!"
-        android:id="@+id/greet"
-        android:layout_marginTop="15dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/greetings"
-        android:layout_marginTop="15dp"
-        android:textSize="25sp"/>
+        android:text="Select the series you have liked so far in the year of 2024"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp" />
+    <CheckBox
+        android:id="@+id/cbTWD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The Walking Dead"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp" />
+    <CheckBox
+        android:id="@+id/cbTBB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The Breaking Bad"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp" />
+    <CheckBox
+        android:id="@+id/cbFri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Friends"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp" />
+    <CheckBox
+        android:id="@+id/cbST"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stranger Things"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select your Gender"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp" />
+    <RadioGroup
+        android:id="@+id/rgGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp" />
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp" />
+    </RadioGroup>
+
+    <Button
+        android:text="Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSubmit"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result will appear here"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"/>
 
 </LinearLayout>
