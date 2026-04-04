@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void showMyCustomToast(String msg) {
                 // Convert XML to View
                 LayoutInflater li = getLayoutInflater();
-                View layout = li.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_container));
+                View layout = li.inflate(R.layout.custom_toast, findViewById(R.id.custom_toast_container));
 
                 // Find the TextView inside that layout and set message
                 TextView text = layout.findViewById(R.id.toast_text);
