@@ -16,7 +16,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button expbtn, impbtn;
+    Button impbtn;
+    EditText etinput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,25 +29,17 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        expbtn = findViewById(R.id.btnExplicit);
         impbtn = findViewById(R.id.btnImplicit);
+        etinput = findViewById(R.id.phoneInput);
 
-        expbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, SecondActivity.class);
 
-                i.putExtra("user_key", "Tanishq Shivasharan");
-
-                startActivity(i);
-            }
-        });
 
         impbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("https://www.google.com"));
+                String phoneNo = etinput.getText().toString();
+                Intent i = new Intent(Intent.ACTION_DIAL);
+                i.setData(Uri.parse("tel: "+ phoneNo));
                 startActivity(i);
             }
         });

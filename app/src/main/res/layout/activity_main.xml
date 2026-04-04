@@ -10,16 +10,17 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnExplicit"
+    <EditText
+        android:id="@+id/phoneInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Open second screen" />
+        android:text="Enter phone number"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/btnImplicit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Open Brave Browser" />
+        android:text="Open implicit phone number dialer." />
 
 </LinearLayout>
