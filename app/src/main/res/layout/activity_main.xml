@@ -6,9 +6,236 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="16dp"
+    android:background="#F5F5F5"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#FFFFFF"
+        android:gravity="end|center_vertical"
+        android:padding="16dp"
+        android:text="0"
+        android:textColor="#212121"
+        android:textSize="48sp"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Button Grid - Takes remaining space -->
+    <GridLayout
+        android:id="@+id/buttonGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:useDefaultMargins="true">
 
+        <!-- Row 1: Clear, Divide, Multiply, Backspace -->
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FF5722"
+            android:text="AC"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FF9800"
+            android:text="÷"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FF9800"
+            android:text="×"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnBackspace"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FF9800"
+            android:text="⌫"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <!-- Row 2: 7, 8, 9, Subtract -->
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="7"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="8"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="9"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FF9800"
+            android:text="−"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <!-- Row 3: 4, 5, 6, Add -->
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="4"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="5"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="6"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FF9800"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <!-- Row 4: 1, 2, 3, Equals (spans 2 rows) -->
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="1"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="2"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="3"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnEquals"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#4CAF50"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <!-- Row 5: 0 (spans 2 columns), Decimal -->
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="0"
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnDecimal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="."
+            android:textColor="#212121"
+            android:textSize="24sp" />
+
+    </GridLayout>
 </LinearLayout>
