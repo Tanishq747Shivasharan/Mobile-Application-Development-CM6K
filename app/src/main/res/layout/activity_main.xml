@@ -7,8 +7,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+    android:layout_margin="20dp"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rupees to Yen converter"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
 
+    <EditText
+        android:id="@+id/etC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. 23"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/convertF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convert to Yen"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tvRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Converted currency value: "
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

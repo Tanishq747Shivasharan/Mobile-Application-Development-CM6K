@@ -14,6 +14,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText etCel;
+    Button btn;
+    TextView tvResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        etCel = findViewById(R.id.etC);
+        btn = findViewById(R.id.convertF);
+        tvResult = findViewById(R.id.tvRes);
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String r = etCel.getText().toString().trim();
+
+                if (!r.isEmpty()) {
+                    float rupee = Float.parseFloat(r);
+                    float yen = rupee * 1.72f;
+                    tvResult.setText(yen + " yen");
+                } else {
+                    tvResult.setText("Please enter a valid currency number.");
+                }
+            }
+        });
     }
 }
