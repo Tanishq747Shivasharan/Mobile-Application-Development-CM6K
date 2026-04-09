@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Examinationprep">
         <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.Examinationprep" />
+        <activity
+            android:name=".MainActivityDrawer"
+            android:exported="false"
+            android:label="@string/title_activity_main_drawer"
+            android:theme="@style/Theme.Examinationprep" />
+        <activity
             android:name=".MyDbHelper"
             android:exported="false" />
         <activity
