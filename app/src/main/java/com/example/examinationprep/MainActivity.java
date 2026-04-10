@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String r = etCel.getText().toString().trim();
+                String etC = etCel.getText().toString().trim();
 
-                if (!r.isEmpty()) {
-                    float rupee = Float.parseFloat(r);
-                    float yen = rupee * 1.72f;
-                    tvResult.setText(yen + " yen");
-                } else {
-                    tvResult.setText("Please enter a valid currency number.");
+                if (etC.isEmpty()) {
+                    etCel.setError("Enter Celsius");
                 }
+                float c = Float.parseFloat(etC);
+                float res;
+                    res  = (c * 9 / 5) + 32;
+                tvResult.setText("Fahrenheit: " + res);
             }
         });
     }
