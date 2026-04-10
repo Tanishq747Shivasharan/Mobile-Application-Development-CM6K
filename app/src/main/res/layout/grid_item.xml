@@ -12,7 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="140dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_home" />
+        android:src="@drawable/book1" />
 
     <TextView
         android:id="@+id/tvTitle"

@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     String[] authors = {"Google", "Robert C. Martin", "Herbert Schildt", "Cormen et al.", "Guido van Rossum", "Elmasri"};
     int[] covers = {R.drawable.book1, R.drawable.book2, R.drawable.book3, R.drawable.book4, R.drawable.book5, R.drawable.book6};
     GridView gv;
-    BookAdapter ba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +39,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         gv = findViewById(R.id.gridView);
-        ba = new BookAdapter(this, titles, authors, covers);
+        BookAdapter ba = new BookAdapter(this, titles, authors, covers);
         gv.setAdapter(ba);
-        gv.setOnItemClickListener((parent, view, position, id) ->
-                Toast.makeText(this, "Selected: " + titles[position],
-                        Toast.LENGTH_SHORT).show());
+        gv.setOnItemClickListener((adapterView, view, i, l) ->
+                Toast.makeText(this, "Selected: " + titles[i], Toast.LENGTH_SHORT).show());
     }
 }
