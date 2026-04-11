@@ -92,7 +92,7 @@ PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
 1. Clone the repository:
    ```
-   https://github.com/Tanishq747Shivasharan/Mobile-Application-Development-CM6K.git
+   git clone https://github.com/Tanishq747Shivasharan/Mobile-Application-Development-CM6K.git
    ```
 
 2. Open the project in Android Studio:
