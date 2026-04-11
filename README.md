@@ -91,7 +91,9 @@ PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 ## Setup and Installation
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/examinationprep.git
+   ```
+   https://github.com/Tanishq747Shivasharan/Mobile-Application-Development-CM6K.git
+   ```
 
 2. Open the project in Android Studio:
    File > Open > [Project Directory]
